@@ -26,7 +26,10 @@ jobs:
       - name: generate html
         run: docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i /local/sampl_api.v1.yaml -g html -o /local/out/html --skip-validate-spec
 
+      - name: generate swift
+        run: docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate -i /local/sampl_api.v1.yaml -g swift5 -o /local/out/swift --skip-validate-spec
+
       - uses: actions/upload-artifact@v1
         with:
-          name: openapi_html
+          name: openapi output
           path: out
