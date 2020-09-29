@@ -4,6 +4,13 @@ info:
   version: '1.0'
 servers:
   - url: 'http://localhost:3000'
-paths: {}
+paths:
+  /sample/users:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-sample-api-users
+    parameters: []
 components:
   schemas: {}
